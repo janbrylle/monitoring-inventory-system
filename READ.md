@@ -1,3 +1,3 @@
-toring-inventory-system
+monitoring-inventory-system
 VPN Secured Inventory Monitoring System with Report Generation
 
