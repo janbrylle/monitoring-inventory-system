@@ -1,0 +1,10 @@
+com/inventory/service/UserService.class
+com/inventory/repository/RoleRepository.class
+com/inventory/controller/LoginController.class
+com/inventory/configuration/WebMvcConfig.class
+com/inventory/repository/UserRepository.class
+com/inventory/model/User.class
+com/inventory/service/UserServiceImpl.class
+com/inventory/model/Role.class
+com/inventory/DemoApplication.class
+com/inventory/configuration/SecurityConfiguration.class

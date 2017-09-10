@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+      lang="en">
+
+
+
+
+<head>
+
+    <title>Spring Security Example </title>
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link href="/static/css/style-responsive.css" th:href="@{/css/style-responsive.css}" rel="stylesheet"/>
+    <link href="/static/css/registration.css" th:href="@{/css/registration.css}" rel="stylesheet">
+
+
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" href="/static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+    <!--external css-->
+    <link type="text/css" href="/static/css/font-awesome/css/font-awesome.css" th:href="@{/css/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+
+
+    <!--<div th:replace="fragments/header :: header-css"/>-->
+
+
+</head>
+<body>
+
+<!--<div th:replace="fragments/header :: header"/>-->
+
+<div class="container">
+
+    <!--<div class="row" style="margin-top:20px">-->
+    <!--<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">-->
+    <!--<form th:action="@{/login}" method="post">-->
+    <!--<fieldset>-->
+    <!--<h1>Please Sign In</h1>-->
+
+    <!--<div th:if="${param.error}">-->
+    <!--<div class="alert alert-danger">-->
+    <!--Invalid username and password.-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div th:if="${param.logout}">-->
+    <!--<div class="alert alert-info">-->
+    <!--You have been logged out.-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="form-group">-->
+    <!--<input type="text" name="username" id="username" class="form-control input-lg"-->
+    <!--placeholder="UserName" required="true" autofocus="true"/>-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+    <!--<input type="password" name="password" id="password" class="form-control input-lg"-->
+    <!--placeholder="Password" required="true"/>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+    <!--<div class="col-xs-6 col-sm-6 col-md-6">-->
+    <!--<input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign In"/>-->
+    <!--</div>-->
+    <!--<div class="col-xs-6 col-sm-6 col-md-6">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</fieldset>-->
+    <!--</form>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <form autocomplete="off" class="form-login" th:action="@{/registration}"
+          th:object="${user}" method="post"
+          role="form">
+
+        <h2 class="form-login-heading"><i class="fa fa-user"></i> Registration Form</h2>
+        <div class="login-wrap">
+
+            <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                   class="validation-message"></label>
+            <input type="text" th:field="*{name}" placeholder="First Name"
+                   class="form-control" required="true" autofocus="true" />
+            <br/>
+
+            <label	th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+                      class="validation-message"></label>
+            <input type="text" th:field="*{lastName}" placeholder="Last Name"
+                   class="form-control" required="true" autofocus="true" />
+            <br/>
+
+            <label
+                    th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                    class="validation-message"></label>
+            <input type="email" th:field="*{email}" placeholder="Email"
+                   class="form-control" required="true" autofocus="true" />
+            <br/>
+
+            <label
+                    th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                    class="validation-message"></label>
+            <input type="password" th:field="*{password}" placeholder="Password"
+                   class="form-control" required="true" autofocus="true" />
+            <br/>
+
+
+            <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-floppy-o"></i>&nbsp; Register User</button>
+            <br />
+            <a class="btn btn-warning btn-block" href="#" th:href="@{/login}">
+                <i class="fa fa-times"></i>
+                &nbsp;Cancel
+            </a>
+
+        </div>
+
+    </form>
+
+
+</div>
+
+<!-- js placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/static/js/jquery.js" th:src="@{/js/jquery.js}"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+
+<!--BACKSTRETCH-->
+<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+<script type="text/javascript" src="/static/js/jquery.backstretch.min.js" th:src="@{/js/jquery.backstretch.min.js}"></script>
+<script>
+    $.backstretch("/img/bottles-1.png", {speed: 500});
+</script>
+
+<!--<div th:replace="fragments/footer :: footer"/>-->
+
+</body>
+</html>

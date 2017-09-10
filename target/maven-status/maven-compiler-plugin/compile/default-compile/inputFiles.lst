@@ -1,0 +1,10 @@
+/home/stms-6n85wb2-l/Downloads/SpringSecurityLoginTutorial-master/src/main/java/com/inventory/configuration/SecurityConfiguration.java
+/home/stms-6n85wb2-l/Downloads/SpringSecurityLoginTutorial-master/src/main/java/com/inventory/service/UserService.java
+/home/stms-6n85wb2-l/Downloads/SpringSecurityLoginTutorial-master/src/main/java/com/inventory/service/UserServiceImpl.java
+/home/stms-6n85wb2-l/Downloads/SpringSecurityLoginTutorial-master/src/main/java/com/inventory/DemoApplication.java
+/home/stms-6n85wb2-l/Downloads/SpringSecurityLoginTutorial-master/src/main/java/com/inventory/model/Role.java
+/home/stms-6n85wb2-l/Downloads/SpringSecurityLoginTutorial-master/src/main/java/com/inventory/configuration/WebMvcConfig.java
+/home/stms-6n85wb2-l/Downloads/SpringSecurityLoginTutorial-master/src/main/java/com/inventory/model/User.java
+/home/stms-6n85wb2-l/Downloads/SpringSecurityLoginTutorial-master/src/main/java/com/inventory/repository/RoleRepository.java
+/home/stms-6n85wb2-l/Downloads/SpringSecurityLoginTutorial-master/src/main/java/com/inventory/controller/LoginController.java
+/home/stms-6n85wb2-l/Downloads/SpringSecurityLoginTutorial-master/src/main/java/com/inventory/repository/UserRepository.java

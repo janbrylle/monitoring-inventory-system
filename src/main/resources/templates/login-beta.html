@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+      lang="en">
+
+<head>
+
+    <title>Login</title>
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link href="/static/css/style-responsive.css" th:href="@{/css/style-responsive.css}" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link type="text/css" href="/static/css/bootstrap.css" th:href="@{/css/bootstrap.css}" rel="stylesheet"/>
+    <!--external css-->
+    <link type="text/css" href="/static/css/font-awesome/css/font-awesome.css" th:href="@{/css/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+    <div id="successMessage" class="alert alert-success" th:if="${successMessage}">
+        <strong th:text="${successMessage}"></strong>
+    </div>
+
+    <form class="form-login" th:action="@{/login}" method="POST">
+
+        <h2 class="form-login-heading">sign in now</h2>
+        <div class="login-wrap">
+            <input type="text" name="email" id="email" class="form-control input-lg"
+                   placeholder="Email" required="true" autofocus="true" autocomplete="on"/>
+            <br/>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password"/>
+
+            <div align="center" th:if="${param.error}">
+                <p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+            </div>
+
+            <label class="checkbox">
+		                <span class="pull-right">
+		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
+
+		                </span>
+            </label>
+            <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+
+            <div class="registration" sec:authorize="isAuthenticated()">
+                Don't have an account yet?<br/>
+                <a class="" href="#" th:href="@{/registration}">
+                    Create an account
+                </a>
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+<!-- js placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="/static/js/jquery.js" th:src="@{/js/jquery.js}"></script>
+<script type="text/javascript" src="/static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+
+<!--BACKSTRETCH-->
+<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+<script type="text/javascript" src="/static/js/jquery.backstretch.min.js" th:src="@{/js/jquery.backstretch.min.js}"></script>
+<script>
+    $.backstretch("/img/bottles-1.png", {speed: 500});
+    setTimeout(function() {
+        $('#successMessage').fadeOut('fast');
+    }, 2000); // <-- time in milliseconds
+</script>
+
+<!--<div th:replace="fragments/footer :: footer"/>-->
+
+</body>
+</html>
